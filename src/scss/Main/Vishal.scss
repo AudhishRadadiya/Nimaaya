@@ -1,0 +1,163 @@
+.cmn_table_wrap {
+  .ant-table-wrapper {
+    .ant-table {
+      border-radius: 10px;
+      overflow: auto;
+
+      @include themify($themes) {
+        background: themed("whiteBg");
+        border: 1px solid themed("borderColor");
+      }
+
+      .ant-table-container {
+        table {
+          thead {
+            th {
+              @include themify($themes) {
+                background: themed("boxBG");
+                color: themed("textDark");
+                border-bottom: 1px solid themed("borderColor");
+              }
+
+              &::before {
+                display: none;
+              }
+
+              &:first-child {
+                border-start-start-radius: 0;
+              }
+
+              &:last-child {
+                border-start-end-radius: 0;
+              }
+            }
+          }
+
+          tbody {
+            tr {
+              td {
+                @include themify($themes) {
+                  background: themed("whiteBg");
+                  color: themed("textDark");
+                  border-bottom: 1px solid themed("borderColor");
+                }
+              }
+
+              &:hover {
+                td {
+                  @include themify($themes) {
+                    background: themed("whiteBg");
+                    color: themed("textDark");
+                  }
+                }
+              }
+
+              &:last-child {
+                td {
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+}
+
+.custom_table_Wrap {
+  .table-responsive {
+    will-change: transform;
+    cursor: grab;
+
+    &.active {
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+    }
+
+    table {
+      border-collapse: separate;
+      border-spacing: 10px;
+      width: 100%;
+
+      tr {
+        th {
+          text-align: center;
+          padding: 8px 24px;
+          border-radius: 8px;
+          white-space: nowrap;
+
+          @include themify($themes) {
+            background: themed("borderColor");
+            color: themed("textDark");
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          td {
+            vertical-align: top;
+
+            .inner_table_wrapper {
+              max-height: 400px;
+              overflow-x: hidden;
+              overflow-y: auto;
+
+              table {
+                min-width: 2410px;
+
+                tr {
+                  th {
+                    position: sticky;
+                    top: 0;
+                    z-index: 999;
+                  }
+                }
+              }
+            }
+          }
+
+          .total_sticky {
+            position: sticky;
+            left: 0;
+            z-index: 10;
+            vertical-align: middle;
+
+            .btn_primary {
+              min-width: 90px;
+              padding: 8px 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.custom_table_Wrap h4 {
+  text-align: center;
+  padding: 8px 24px;
+  border-radius: 8px;
+  white-space: nowrap;
+
+  @include themify($themes) {
+    background: themed("borderColor");
+  }
+}
+
+@media (max-width: 1501px) {
+  .custom_table_Wrap .table-responsive table tr th {
+    padding: 7px 24px;
+    font-size: 13px;
+  }
+  .custom_table_Wrap h4,
+  .custom_table_Wrap .h4 {
+    padding: 7px 24px;
+    font-size: 13px;
+  }
+}

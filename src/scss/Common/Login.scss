@@ -1,0 +1,515 @@
+.login_wrapper {
+  position: relative;
+
+  @include themify($themes) {
+    background: themed("whiteBg");
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 112px;
+    height: 164px;
+    background: url(../../Img/shape3.png);
+    z-index: -1;
+    background-repeat: no-repeat;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 101px;
+    height: 113px;
+    background: url(../../Img/shape4.png);
+    z-index: -1;
+    background-repeat: no-repeat;
+  }
+}
+
+.login_img {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 40px;
+  position: relative;
+  z-index: 9;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    width: 120px;
+    height: 186px;
+    background: url(../../Img/shape1.png);
+    z-index: -1;
+    background-repeat: no-repeat;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 140px;
+    height: 120px;
+    background: url(../../Img/shape2.png);
+    z-index: -1;
+    background-repeat: no-repeat;
+  }
+}
+
+.login_wrapper {
+  .forgot_bg {
+    height: 100vh;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.login_form_wrap {
+  width: 100%;
+  max-width: 500px;
+  padding: 60px 0 10px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 50px;
+
+    .logo_text {
+      @include themify($themes) {
+        filter: themed("brightnessBW");
+      }
+    }
+  }
+
+  h1 {
+    margin: 0 0 40px;
+    text-align: center;
+  }
+
+  .ant-form {
+    height: calc(100vh - 395px);
+    overflow: hidden auto;
+    padding-right: 5px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+  }
+}
+
+.set_password_wrapper {
+  height: calc(100vh - 445px);
+  margin-bottom: 30px;
+
+  .ant-form {
+    margin-bottom: 0;
+  }
+}
+
+.back_to_login {
+  a {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.forgot_password_wrapper {
+  height: calc(100vh - 390px);
+  overflow: auto;
+}
+
+.forgot_pass_radio_wrapper {
+  .form_group {
+    label {
+      display: flex;
+      align-items: center;
+      padding: 20px 25px;
+
+      @include themify($themes) {
+        border: 1px solid themed("borderColor");
+      }
+
+      border-radius: 20px;
+      position: relative;
+      margin: 0 0 20px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background: url(../../Img/check-icon.svg);
+        display: none;
+      }
+
+      .icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: rgb(139 139 139 / 9%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          filter: grayscale(1) brightness(0);
+        }
+      }
+
+      .label_text {
+        width: calc(100% - 70px);
+        padding: 0 50px 0 20px;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    input {
+      display: none;
+
+      &:checked {
+        + label {
+          @include themify($themes) {
+            border-color: themed("primary");
+          }
+
+          &::after {
+            display: block;
+          }
+
+          .icon {
+            background: #d4b47430;
+
+            img {
+              filter: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.otp_wrapper {
+  ul {
+    display: flex;
+
+    li {
+      padding: 0 25px;
+
+      .ant-form-item {
+        .ant-form-item-row {
+          .ant-form-item-control {
+            .ant-input {
+              font-size: 20px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.otp_wrapper {
+  margin-bottom: 30px;
+
+  input {
+    font-size: 20px;
+    text-align: center;
+    @include themify($themes) {
+      border: 1px solid themed("borderColor");
+      color: themed("textDark");
+    }
+    padding: 12px 20px;
+    font-weight: 400;
+    border-radius: 10px;
+    background: transparent;
+    width: 100% !important;
+    margin: 0 20px;
+
+    &:focus-visible {
+      border: 1px solid #d3b474;
+      outline: none;
+    }
+  }
+
+  &.red_active {
+    input {
+      border: 1px solid rgb(255, 0, 0);
+
+      &:focus-visible {
+        border: 1px solid rgb(255, 0, 0);
+      }
+    }
+  }
+}
+
+.login_wrapper {
+  .custom_select {
+    .ant-select {
+      .ant-select-selector {
+        padding: 14px 20px;
+      }
+
+      .ant-select-arrow {
+        &:after {
+          top: 2px;
+        }
+      }
+    }
+  }
+}
+
+// reset password css start
+.reset_password_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.reset_password_inner_wrap {
+  max-width: 530px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+// .reset_password_wrap label {
+//   color: #1b1d28 !important;
+// }
+
+// .reset_password_wrap input {
+//   color: #96a0b5 !important;
+//   border: 1px solid #e5ebf0;
+// }
+
+.user_location_wrapper .custom_select {
+  margin-bottom: 100px;
+}
+
+.login_display_btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+// reset password css end
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  @include themify($themes) {
+    -webkit-text-fill-color: themed("textDark");
+    -webkit-box-shadow: 0 0 0px 1000px themed("whiteBg") inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+.ant-select-selector {
+  background: transparent !important;
+}
+
+@media (max-width: 1700px) {
+  .login_form_wrap .logo {
+    margin: 0 0 25px;
+  }
+  .login_wrapper .custom_select .ant-select .ant-select-arrow {
+    top: 24px;
+  }
+  .login_wrapper .pick_location_wrap {
+    margin-bottom: 40px !important;
+  }
+}
+
+@media (max-width: 1500px) {
+  .login_wrapper .custom_select .ant-select .ant-select-selector {
+    font-size: 15px;
+    padding: 12px 15px;
+  }
+  .user_location_wrapper .custom_select {
+    margin-bottom: 80px;
+  }
+  .login_wrapper .custom_select .ant-select .ant-select-arrow:after {
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+  }
+  .login_wrapper .custom_select .ant-select .ant-select-arrow {
+    top: 22px;
+  }
+}
+
+@media (max-width: 991px) {
+  .login_display_btn button {
+    box-shadow: 0 0 2px #000 !important;
+    overflow: hidden;
+  }
+
+  .theme-light .login_display_btn button {
+    box-shadow: none !important;
+    overflow: hidden;
+  }
+
+  .user_location_wrapper .custom_select {
+    margin-bottom: 50px;
+  }
+
+  .login_wrapper {
+    height: 100vh;
+  }
+
+  .login_form_wrap .ant-form {
+    height: auto;
+    padding-right: 0;
+    margin-bottom: 0;
+    overflow: initial;
+  }
+
+  .login_form_wrap .logo {
+    margin: 0 0 30px;
+  }
+
+  .login_form_wrap {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .login_top_wrapper {
+    background: #fbf8f3;
+    padding: 40px 15px;
+    border-radius: 0 0 50px 0;
+    position: relative;
+    text-align: center;
+
+    img.top_img {
+      width: 100%;
+      height: 175px;
+      object-fit: contain;
+    }
+
+    &:before {
+      content: "";
+      bottom: 0;
+      box-shadow: -44px -48px 0 0 #fbf8f3;
+      position: absolute;
+      left: 0;
+      bottom: -100px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      z-index: 9;
+    }
+
+    .back_arrow {
+      position: absolute;
+      left: 20px;
+      top: 42px;
+    }
+  }
+
+  .forgot_password_wrapper {
+    padding: 40px 20px 30px;
+    height: calc(100vh - 360px);
+    overflow: auto;
+    position: relative;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .login_form_wrap h1,
+  .login_form_wrap .h1 {
+    margin: 0;
+    color: #1b1d28;
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .login_form_wrap .logo .logo_text {
+    filter: inherit !important;
+  }
+
+  .login_form_box {
+    padding: 40px 20px 30px;
+    height: calc(100vh - 281px);
+    overflow: auto;
+    position: relative;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .set_password_wrapper {
+    padding: 40px 20px 30px;
+    height: calc(100vh - 375px);
+    overflow: auto;
+    position: relative;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .forgot_pass_radio_wrapper .form_group label {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .otp_wrapper ul li {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 481px) {
+  .login_form_wrap h1,
+  .login_form_wrap .h1 {
+    font-size: 7vw;
+  }
+}
+
+@media (max-height: 750px) {
+  .login_form_wrap .ant-form {
+    max-height: calc(100vh - 385px);
+  }
+}

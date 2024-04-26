@@ -1,0 +1,853 @@
+.page_main_content {
+  padding: 30px;
+  height: calc(100% - 85px);
+
+  .page_inner_content {
+    @include themify($themes) {
+      border: 1px solid themed("borderColor");
+    }
+
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 100%;
+    max-height: 100%;
+    overflow: hidden auto;
+    position: relative;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.page_header {
+  padding: 0 0 20px;
+  margin-bottom: 15px;
+
+  @include themify($themes) {
+    border-bottom: 1px solid themed("borderColor");
+  }
+}
+
+.user_main_wrap {
+  height: calc(100vh - 390px);
+  overflow: hidden auto;
+
+  .user_box {
+    padding: 15px 0;
+    position: relative;
+
+    @include themify($themes) {
+      border-bottom: 1px solid themed("borderColor");
+    }
+
+    .user_img {
+      width: 60px;
+      height: 60px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .user_name_letter {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e5ebf0;
+        border-radius: 50%;
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      @media (max-width: 575px) {
+        width: 50px;
+        height: 50px;
+
+        @media (max-width: 480px) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+
+    .user_text {
+      padding-left: 20px;
+      width: calc(100% - 60px);
+
+      .bedge {
+        display: none;
+
+        @media (max-width: 767px) {
+          display: inline-block;
+
+          @media (max-width: 575px) {
+            font-size: 14px;
+            padding: 4px 12px;
+
+            @media (max-width: 480px) {
+              font-size: 10px;
+              padding: 2px 8px;
+            }
+          }
+        }
+      }
+
+      h3 {
+        @media (max-width: 575px) {
+          font-size: 16px;
+          line-height: 22px;
+
+          @media (max-width: 480px) {
+            font-size: 13px;
+            line-height: 18px;
+          }
+        }
+      }
+
+      p {
+        @media (max-width: 480px) {
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        padding-left: 10px;
+        width: calc(100% - 40px);
+      }
+    }
+
+    .user_roll {
+      li {
+        padding-right: 15px;
+      }
+
+      @media (max-width: 767px) {
+        li.btn_delete {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+          padding-right: 0;
+
+          &.btn_edit {
+            right: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.roll_permission_inner {
+  ul.roll_checkbox_wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    li {
+      flex-grow: 1;
+      padding: 0 12px;
+
+      &:last-child {
+
+        // margin-left: auto;
+        // text-align: right;
+        @media (max-width: 767px) {
+          // display: none;
+        }
+      }
+
+      @media (max-width: 1500px) {
+        padding: 0 7px;
+
+        // flex-grow: 0;
+        @media (max-width: 767px) {
+          width: 25%;
+
+          @media (max-width: 575px) {
+            width: 33.33%;
+
+            @media (max-width: 400px) {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.form_process_wrapper {
+  .ant-form-item {
+    .ant-form-item-row {
+      display: block;
+
+      .ant-form-item-label {
+        text-align: start;
+      }
+
+      .ant-form-item-control {
+        .ant-input {
+          padding: 12px 12px;
+        }
+      }
+    }
+  }
+
+  .ant-form-item .ant-form-item-row {
+    :has(.ant-form-item-required) {
+      .ant-form-item-control {
+        .ant-input {
+          border: 1px solid #ff4d4f !important;
+        }
+      }
+    }
+
+    .ant-form-item-label label {
+      font-size: 14px;
+      color: $textLight;
+      white-space: nowrap;
+
+      &::after {
+        visibility: hidden;
+      }
+
+      span {
+        b {
+          color: #ff4d4f;
+          font-size: 12px;
+          margin-left: 1px;
+        }
+      }
+
+      .ant-form-item-tooltip {
+        color: $textLight;
+      }
+    }
+  }
+}
+
+// .ant-form-item .ant-form-item-row:has(.ant-form-item-required) {
+//   .ant-form-item-control {
+//     .ant-input {
+//       border: 1px solid #ff4d4f !important;
+//     }
+
+//     .ant-select {
+//       .ant-select-selector {
+//         border: 1px solid #ff4d4f !important;
+//       }
+//     }
+
+//     .ant-picker {
+//       border: 1px solid #ff4d4f !important;
+//     }
+//   }
+// }
+
+.form_process_wrapper {
+  padding-left: 34px;
+  position: relative;
+
+  .form_info_wrapper {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 5px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #c9d5df;
+      box-shadow: 0 0 0 6px rgba(201, 213, 223, 0.5);
+      z-index: 2;
+      transition: background 2s ease;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 10px;
+      width: 1px;
+      height: calc(100% - 10px);
+      background: $textLight;
+      z-index: 1;
+    }
+
+    &.filled {
+      &:before {
+        @include themify($themes) {
+          background: themed("primary");
+        }
+
+        box-shadow: 0 0 0 6px rgba(211, 180, 116, 0.5);
+      }
+
+      &:after {
+        @include themify($themes) {
+          background: themed("primary");
+        }
+      }
+    }
+
+    &.center {
+      &:before {
+        top: 10px;
+      }
+    }
+  }
+}
+
+.Guidance_wrap {
+  margin-top: -15px !important;
+}
+
+.ant-upload-wrapper .ant-upload {
+  width: 100%;
+}
+
+.disabledInput {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.location_select {
+  .custom_select {
+    .ant-row {
+      align-items: center;
+    }
+  }
+}
+
+.location_header.custom_select {
+  .ant-select {
+    .ant-select-selector {
+      padding: 0px 16px;
+      border-radius: 6px;
+      width: 145px;
+    }
+
+    .ant-select-arrow:after {
+      left: 9px;
+      top: -11px;
+    }
+  }
+}
+
+.location_select {
+  h5 {
+    width: 100px;
+    margin: 0;
+  }
+
+  .custom_select {
+    width: calc(100% - 100px);
+  }
+}
+
+.with_validation_label {
+  font-size: 14px;
+  color: #96a0b5;
+  white-space: nowrap;
+  padding: 0 0 8px;
+  position: relative;
+
+  span {
+    color: #ff4d4f;
+    position: absolute;
+    right: -10px;
+    top: 2px;
+  }
+}
+
+.error_line {
+  border: 2px solid #ff4d4f;
+  border-radius: 7px;
+}
+
+.Guidance_wrap {
+  .custom_select .ant-select {
+    .ant-select-selector {
+      padding: 0px 12px;
+      border-radius: 7px;
+    }
+
+    .ant-select-arrow:after {
+      top: -11px;
+    }
+  }
+}
+
+.filter_row_wrapper>* {
+  padding: 0 8px;
+}
+
+.red_row_wrapper {
+  .ant-form-item {
+    .ant-form-item-row {
+      .ant-form-item-control {
+
+        .ant-select-selector,
+        .ant-picker,
+        .ant-input {
+          border-color: #f00 !important;
+        }
+      }
+    }
+  }
+}
+
+.Principle_method_wrap {
+  padding: 18px;
+  border-radius: 12px;
+
+  @include themify($themes) {
+    border: 1px solid themed("borderColor");
+  }
+}
+
+.default_value_wrap {
+  span {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 15px;
+    padding: 12px;
+    border-radius: 10px;
+    white-space: nowrap;
+
+    @include themify($themes) {
+      background: themed("bgLight");
+      color: themed("textDark");
+    }
+  }
+}
+
+.main_div_wrapper {
+  position: relative;
+}
+
+.img_box_wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_div_wrapper .img_box_wrap img {
+  display: inline-block;
+  width: 20px;
+}
+
+.repeat_test_btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+}
+
+.custom_default_value {
+  min-width: 200px;
+}
+
+.custom_table_wrap {
+  overflow: hidden;
+  border-radius: 12px;
+
+  @include themify($themes) {
+    border: 1px solid themed("borderColor");
+  }
+
+  table {
+    thead {
+      tr {
+        th {
+          padding: 18px 22px;
+          white-space: nowrap;
+
+          @include themify($themes) {
+            background: themed("bgLight");
+            color: themed("textDark");
+            border-bottom: 1px solid themed("borderColor");
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          color: #96a0b5;
+          padding: 12px 22px;
+          white-space: nowrap;
+
+          @include themify($themes) {
+            border-bottom: 1px solid themed("borderColor");
+          }
+
+          input {
+            width: 120px !important;
+          }
+        }
+
+        &:last-child {
+          td {
+            @include themify($themes) {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.table_custom_footer {
+  padding: 12px 22px;
+  border-radius: 12px;
+
+  input {
+    width: 120px !important;
+  }
+
+  @include themify($themes) {
+    border: 1px solid themed("borderColor");
+  }
+}
+
+// responsive css start
+
+@media (max-width: 1700px) {
+  .repeat_test_btn {
+    right: 15px;
+    top: 15px;
+  }
+
+  .default_value_wrap span {
+    padding: 9px 12px;
+  }
+
+  .form_process_wrapper .ant-form-item .ant-form-item-row .ant-form-item-label label {
+    font-size: 13px;
+  }
+
+  .form_process_wrapper .ant-form-item .ant-form-item-row .ant-form-item-control .ant-input {
+    padding: 9px 12px;
+  }
+
+  .patient_info_custom_row .patient_info_left {
+    width: 60% !important;
+  }
+
+  .patient_info_custom_row .patient_info_right {
+    width: 40% !important;
+  }
+
+  .page_main_content {
+    padding: 15px;
+  }
+
+  .page_main_content .page_inner_content {
+    padding: 15px;
+  }
+
+  .form_process_wrapper {
+    padding-left: 35px;
+  }
+
+  .user_main_wrap {
+    height: calc(100vh - 360px);
+  }
+
+  .ant-tabs .ant-tabs-nav .ant-tabs-nav-wrap .ant-tabs-nav-list .ant-tabs-tab .ant-tabs-tab-btn {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1501px) {
+  .default_value_wrap span {
+    border-radius: 7px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .form_process_wrapper .ant-form-item .ant-form-item-row .ant-form-item-control .ant-input {
+    padding: 9px 12px;
+    font-size: 13px;
+    line-height: 18px;
+    border-radius: 7px;
+  }
+
+  .ant-form-item .ant-picker .ant-picker-input input {
+    font-size: 12px;
+  }
+
+  .form_process_wrapper .ant-form-item {
+    margin-bottom: 15px;
+  }
+
+  .form_process_wrapper .react-tel-input .form-control {
+    padding: 5px 15px 5px 60px;
+    border-radius: 7px;
+  }
+
+  .form_process_wrapper .form_info_wrapper:after {
+    height: calc(100% - 3px);
+  }
+
+  .form_process_wrapper .form_info_wrapper:before {
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 0 5px rgba(201, 213, 223, 0.5);
+  }
+
+  .form_process_wrapper .form_info_wrapper.filled:before {
+    box-shadow: 0 0 0 5px rgba(211, 180, 116, 0.5);
+  }
+
+  .patient_info_custom_row .patient_info_left {
+    width: 55% !important;
+  }
+
+  .patient_info_custom_row .patient_info_right {
+    width: 45% !important;
+  }
+
+  h3,
+  .h3 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  h4,
+  .h4 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .custom_select .ant-select .ant-select-arrow:after {
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+  }
+
+  .page_main_content {
+    height: calc(100% - 65px);
+  }
+
+  .cmn_table_wrap .ant-table-wrapper .ant-table .ant-table-container table thead th {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .cmn_table_wrap .ant-table-wrapper .ant-table .ant-table-container table tbody td {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .user_main_wrap {
+    height: calc(100vh - 315px);
+  }
+
+  .user_main_wrap .user_box .user_img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .location_header.custom_select .ant-select .ant-select-selector {
+    width: 130px;
+  }
+
+  .btn_primary,
+  .btn_gray,
+  .btn_border,
+  .btn_print {
+    padding: 7px 13px !important;
+    font-size: 13px;
+  }
+
+  .page_header {
+    padding: 0 0 15px;
+    margin-bottom: 6px;
+  }
+
+  .mb24 {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .patient_info_custom_row .patient_info_left {
+    width: 50% !important;
+  }
+
+  .patient_info_custom_row .patient_info_right {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 1400px) {
+  .photo_upload_inner .row {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 1279px) {
+  .main_wrapper {
+    &.sidebar_collapse {
+      .inner_wrapper {
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 99;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1120px) {
+  .patient_info_custom_row .patient_info_left {
+    width: 100% !important;
+  }
+
+  .patient_info_custom_row .patient_info_right {
+    width: 60% !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .repeat_test_btn {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  .page_main_content {
+    padding: 0 20px 20px;
+    height: calc(100% - 146px);
+
+    .page_inner_content {
+      padding: 0;
+      border: 0 !important;
+    }
+  }
+
+  .page_heading {
+    h1 {
+      text-align: center;
+      margin: 0;
+      font-size: 20px;
+      line-height: 30px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .patient_info_custom_row .patient_info_right {
+    width: 70% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .plus_mobile_wrap .btn_primary {
+    min-width: auto;
+    padding: 8px;
+  }
+
+  .btn_border,
+  .btn_primary,
+  .btn_gray,
+  .btn_print {
+    min-width: 80px;
+  }
+
+  .patient_info_custom_row .patient_info_right {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .form_process_wrapper .ant-form-item .ant-form-item-row .ant-form-item-label label {
+    height: auto;
+  }
+
+  .form_process_wrapper .ant-form-item .ant-form-item-row .ant-form-item-label {
+    padding: 0 0 6px;
+  }
+}
+
+@media (max-width: 481px) {
+  header {
+    padding: 15px;
+  }
+
+  .search_bar_mobile {
+    padding: 15px;
+  }
+
+  .page_main_content {
+    padding: 0 15px 15px;
+    height: calc(100% - 126px);
+  }
+
+  .form_process_wrapper {
+    padding-left: 25px;
+  }
+
+  .form_process_wrapper .form_info_wrapper:before {
+    left: -20px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .form_process_wrapper .form_info_wrapper:after {
+    left: -15px;
+    top: 10px;
+    height: calc(100% - 6px);
+  }
+
+  .form_process_wrapper .form_info_wrapper:before {
+    box-shadow: 0 0 0 5px rgba(201, 213, 223, 0.5);
+  }
+
+  .form_process_wrapper .form_info_wrapper.filled:before {
+    box-shadow: 0 0 0 5px rgba(211, 180, 116, 0.5);
+  }
+
+  .ant-tabs .ant-tabs-nav .ant-tabs-nav-wrap .ant-tabs-nav-list .ant-tabs-tab .ant-tabs-tab-btn {
+    font-size: 16px;
+  }
+
+  .ant-form-item-control .ant-checkbox-wrapper .ant-checkbox .ant-checkbox-inner {
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn_border,
+  .btn_primary,
+  .btn_gray,
+  .btn_print {
+    min-width: auto;
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+}
